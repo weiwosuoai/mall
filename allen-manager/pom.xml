@@ -22,7 +22,6 @@
 		<module>allen-manager-dao</module>
 		<module>allen-manager-interface</module>
 		<module>allen-manager-service</module>
-		<module>allen-manager-web</module>
 	</modules>
 
 	<build>
@@ -32,7 +31,7 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<configuration>
 					<path>/</path>
-					<port>8081</port>
+					<port>8080</port>
 				</configuration>
 			</plugin>
 		</plugins>
