@@ -7,7 +7,7 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-	
+
 	<!-- 解决 post 乱码 -->
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
@@ -27,7 +27,8 @@
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<!-- contextConfigLocation 不是必须的， 如果不配置 contextConfigLocation， springmvc 的配置文件默认在：WEB-INF/servlet 的 name+"-servlet.xml" -->
+		<!-- contextConfigLocation 不是必须的， 如果不配置 contextConfigLocation， springmvc 
+			的配置文件默认在：WEB-INF/servlet 的 name+"-servlet.xml" -->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath:spring-mvc.xml</param-value>
@@ -38,4 +39,5 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
 </web-app>
