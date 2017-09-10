@@ -5,11 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.allenmall.common.pojo.EasyUIGridResult;
 import com.allenmall.mapper.TbItemMapper;
 import com.allenmall.pojo.TbItem;
 import com.allenmall.pojo.TbItemExample;
 import com.allenmall.pojo.TbItemExample.Criteria;
 import com.allenmall.service.ItemService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 /**
  * 商品管理 service
@@ -36,6 +39,20 @@ public class ItemServiceImpl implements ItemService {
 			return list.get(0);
 		}
 		return null;
+	}
+
+	@Override
+	public EasyUIGridResult findItemList(int page, int rows) {
+		PageHelper.startPage(page, rows);
+		TbItemExample example = new TbItemExample();
+		List<TbItem> list = itemMapper.selectByExample(example);
+		EasyUIGridResult result = new EasyUIGridResult();
+		result.setRows(list);
+		
+		PageInfo<TbItem> pageInfo = new PageInfo<>(list);
+		
+		result.setTotal(pageInfo.getTotal());
+		return result;
 	}
 
 }
