@@ -46,11 +46,12 @@ public class ItemServiceImpl implements ItemService {
 		PageHelper.startPage(page, rows);
 		TbItemExample example = new TbItemExample();
 		List<TbItem> list = itemMapper.selectByExample(example);
-		EasyUIDataGridResult result = new EasyUIDataGridResult();
-		result.setRows(list);
+
 		
 		PageInfo<TbItem> pageInfo = new PageInfo<>(list);
 		
+		EasyUIDataGridResult result = new EasyUIDataGridResult();
+		result.setRows(pageInfo.getList());
 		result.setTotal(pageInfo.getTotal());
 		return result;
 	}
