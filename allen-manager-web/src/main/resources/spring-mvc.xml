@@ -27,4 +27,5 @@
 	<dubbo:application name="allen-manager-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.188.142:2181"/>	
 	<dubbo:reference interface="com.allenmall.service.ItemService" id="itemService" />
+	<dubbo:reference interface="com.allenmall.service.ItemCatService" id="itemCatService" />
 </beans>

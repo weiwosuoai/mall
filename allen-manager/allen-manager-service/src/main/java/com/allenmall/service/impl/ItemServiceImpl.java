@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.allenmall.common.pojo.EasyUIGridResult;
+import com.allenmall.common.pojo.EasyUIDataGridResult;
 import com.allenmall.mapper.TbItemMapper;
 import com.allenmall.pojo.TbItem;
 import com.allenmall.pojo.TbItemExample;
@@ -42,11 +42,11 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public EasyUIGridResult findItemList(int page, int rows) {
+	public EasyUIDataGridResult findItemList(int page, int rows) {
 		PageHelper.startPage(page, rows);
 		TbItemExample example = new TbItemExample();
 		List<TbItem> list = itemMapper.selectByExample(example);
-		EasyUIGridResult result = new EasyUIGridResult();
+		EasyUIDataGridResult result = new EasyUIDataGridResult();
 		result.setRows(list);
 		
 		PageInfo<TbItem> pageInfo = new PageInfo<>(list);
