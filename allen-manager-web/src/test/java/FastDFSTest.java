@@ -12,6 +12,7 @@ import org.junit.Test;
  */
 public class FastDFSTest {
 	
+	
 	@Test
 	public void testUploadFile() throws Exception {
 		ClientGlobal.init("C:/developer/allenmallgit/allen-manager-web/src/main/resources/client.conf");
@@ -29,6 +30,10 @@ public class FastDFSTest {
 		for (String str : strs) {
 			System.out.println(str);
 		}
+	}
+	
+	@Test
+	public void testFastDFSClient() {
 	}
 
 }
