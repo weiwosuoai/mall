@@ -5,6 +5,8 @@ import org.csource.fastdfs.TrackerClient;
 import org.csource.fastdfs.TrackerServer;
 import org.junit.Test;
 
+import com.allenmall.common.utils.FastDFSClient;
+
 /**
  * fastdfs 文件上传
  * @author Allen
@@ -12,7 +14,10 @@ import org.junit.Test;
  */
 public class FastDFSTest {
 	
-	
+	/**
+	 * 原生的 fastdfs 上传图片测试
+	 * @throws Exception
+	 */
 	@Test
 	public void testUploadFile() throws Exception {
 		ClientGlobal.init("C:/developer/allenmallgit/allen-manager-web/src/main/resources/client.conf");
@@ -32,8 +37,16 @@ public class FastDFSTest {
 		}
 	}
 	
+	/**
+	 * fastdfs 封装工具类测试
+	 * @throws Exception
+	 */
 	@Test
-	public void testFastDFSClient() {
+	public void testFastDFSClient() throws Exception {
+		FastDFSClient client = new FastDFSClient("C:/developer/allenmallgit/allen-manager-web/src/main/resources/client.conf");
+		String file = client.uploadFile("C:/Users/Allen/Pictures/1.jpg");
+		System.out.println(file);
+		
 	}
 
 }
