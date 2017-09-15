@@ -58,24 +58,12 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>fastdfs_client</groupId>
+			<artifactId>fastdfs_client</artifactId>
+			<version>1.25</version>
+		</dependency>
 	</dependencies>
-	
-	<build>
-		<plugins>
-			<!-- geelynote maven的核心插件之-complier插件默认只支持编译Java 1.4，因此需要加上支持高版本jre的配置，在pom.xml里面加上 
-				增加编译插件 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-					<encoding>UTF-8</encoding>
-					<compilerArguments>
-						<extdirs>${project.basedir}/src/main/webapp/WEB-INF/lib</extdirs>
-					</compilerArguments>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+
 </project>
